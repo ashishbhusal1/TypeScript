@@ -15,7 +15,7 @@ console.log("Hello amazing typescript")
 
 class User {
 
-    private _courseCount = 1
+    protected _courseCount = 1
 
     readonly city: string = 'Jumla'
     constructor(
@@ -42,6 +42,12 @@ class User {
             throw new Error("Course count should be more then 1")
         }
         this._courseCount = courseNum
+    }
+}
+class SubUser extends User{
+    isFamily:boolean=true
+    changeCourseCount(){
+        this._courseCount=4
     }
 }
 
